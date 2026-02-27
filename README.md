@@ -69,12 +69,18 @@ Get your free API key at [Rejseplanen Labs](https://www.rejseplanen.dk/api).
 ## Kubernetes
 
 ```bash
-# Install with API key
+# Install from OCI registry
+helm install cph-metro-exporter oci://ghcr.io/joluc/charts/cph-metro-exporter \
+  --version 1.0.0 \
+  --set rejseplanen.apiKey=your-api-key
+
+# Install from local chart
 helm install cph-metro-exporter ./helm/cph-metro-exporter \
   --set rejseplanen.apiKey=your-api-key
 
 # Install with demo mode
-helm install cph-metro-exporter ./helm/cph-metro-exporter \
+helm install cph-metro-exporter oci://ghcr.io/joluc/charts/cph-metro-exporter \
+  --version 1.0.0 \
   --set config.demoMode=true
 ```
 

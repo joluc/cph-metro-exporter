@@ -4,30 +4,31 @@ Helm chart for deploying the Copenhagen Metro Exporter to Kubernetes.
 
 ## Installation
 
-### With API Key
+### From OCI Registry (Recommended)
 
 ```bash
+# With API Key
+helm install cph-metro-exporter oci://ghcr.io/joluc/charts/cph-metro-exporter \
+  --version 1.0.0 \
+  --set rejseplanen.apiKey=your-api-key-here
+
+# With Existing Secret
+helm install cph-metro-exporter oci://ghcr.io/joluc/charts/cph-metro-exporter \
+  --version 1.0.0 \
+  --set rejseplanen.existingSecret=rejseplanen-api
+
+# Demo Mode (No API Key Required)
+helm install cph-metro-exporter oci://ghcr.io/joluc/charts/cph-metro-exporter \
+  --version 1.0.0 \
+  --set config.demoMode=true
+```
+
+### From Local Chart
+
+```bash
+# With API Key
 helm install cph-metro-exporter ./helm/cph-metro-exporter \
   --set rejseplanen.apiKey=your-api-key-here
-```
-
-### With Existing Secret
-
-```bash
-# Create secret first
-kubectl create secret generic rejseplanen-api \
-  --from-literal=api-key=your-api-key-here
-
-# Install with existing secret
-helm install cph-metro-exporter ./helm/cph-metro-exporter \
-  --set rejseplanen.existingSecret=rejseplanen-api
-```
-
-### Demo Mode (No API Key Required)
-
-```bash
-helm install cph-metro-exporter ./helm/cph-metro-exporter \
-  --set config.demoMode=true
 ```
 
 ## Configuration
@@ -97,6 +98,12 @@ helm install cph-metro-exporter ./helm/cph-metro-exporter -f values.yaml
 ## Upgrading
 
 ```bash
+# Upgrade from OCI registry
+helm upgrade cph-metro-exporter oci://ghcr.io/joluc/charts/cph-metro-exporter \
+  --version 1.0.0 \
+  --set rejseplanen.apiKey=your-api-key
+
+# Upgrade from local chart
 helm upgrade cph-metro-exporter ./helm/cph-metro-exporter \
   --set rejseplanen.apiKey=your-api-key
 ```
