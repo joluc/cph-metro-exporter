@@ -95,7 +95,7 @@ docker build -t cph-metro-exporter .
 
 ## License
 
-[Your license here]
+MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Fleet Reference
 
