@@ -1,0 +1,43 @@
+# Binaries
+exporter
+cph-metro-exporter
+*.exe
+*.test
+*.out
+
+# Go vendor
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+*.coverprofile
+coverage.txt
+coverage.html
+
+# Logs
+*.log
+
+# Helm
+helm/*/charts/
+helm/*/*.tgz
+
+# Temporary files
+tmp/
+temp/
+
+# Environment files
+.env
+.env.local
+
+# Claude project files
+.claude/
