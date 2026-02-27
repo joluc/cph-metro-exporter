@@ -1,6 +1,6 @@
 # Binaries
-exporter
-cph-metro-exporter
+/exporter
+/cph-metro-exporter
 *.exe
 *.test
 *.out

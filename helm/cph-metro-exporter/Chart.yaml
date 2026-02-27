@@ -1,0 +1,18 @@
+apiVersion: v2
+name: cph-metro-exporter
+description: Prometheus exporter for Copenhagen Metro real-time service monitoring
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - prometheus
+  - exporter
+  - copenhagen
+  - metro
+  - monitoring
+  - rejseplanen
+maintainers:
+  - name: joluc
+home: https://github.com/joluc/cph-metro-exporter
+sources:
+  - https://github.com/joluc/cph-metro-exporter
