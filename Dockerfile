@@ -14,8 +14,8 @@ RUN go mod download
 COPY . .
 
 # Build the binary (use TARGETOS and TARGETARCH for multi-arch builds)
-ARG TARGETOS=linux
-ARG TARGETARCH=amd64
+ARG TARGETOS
+ARG TARGETARCH
 RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -ldflags="-w -s" -o exporter ./cmd/exporter
 
 # Final stage
